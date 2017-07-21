@@ -6,35 +6,35 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Movie {
+public class Cd {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String title;
+	private String artistName;
 	private String genre;
-	private String published;
+	private String albumTitle;
 
-	public Movie() {
+	public Cd() {
 
 	}
 
-	public Movie(String title, String genre, String published) {
-		this.title = title;
+	public Cd(String artistName, String genre, String albumTitle) {
+		this.artistName = artistName;
 		this.genre = genre;
-		this.published = published;
+		this.albumTitle = albumTitle;
 	}
 
 	public Long getId() {
 		return id;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getArtistName() {
+		return artistName;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setArtistName(String title) {
+		this.artistName = title;
 	}
 
 	public String getGenre() {
@@ -45,12 +45,12 @@ public class Movie {
 		this.genre = genre;
 	}
 
-	public String getPublished() {
-		return published;
+	public String getAlbumTitle() {
+		return albumTitle;
 	}
 
-	public void setPublished(String published) {
-		this.published = published;
+	public void setAlbumTitle(String albumTitle) {
+		this.albumTitle = albumTitle;
 	}
 
 }

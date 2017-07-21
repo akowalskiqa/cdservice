@@ -9,13 +9,13 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import com.qa.cinema.business.MovieService;
+import com.qa.cinema.business.CdService;
 
 @Path("/cinema")
-public class MovieEndpoint {
+public class CdEndPoint {
 
 	@Inject
-	private MovieService service;
+	private CdService service;
 
 	@Path("/json")
 	@GET
@@ -27,15 +27,15 @@ public class MovieEndpoint {
 	@Path("/json")
 	@POST
 	@Produces({ "application/json" })
-	public String addMovie(String movie) {
-		return service.createMovie(movie);
+	public String addMovie(String cd) {
+		return service.createMovie(cd);
 	}
 
 	@Path("/json/{id}")
 	@PUT
 	@Produces({ "application/json" })
-	public String updateMovie(@PathParam("id") Long id, String movie) {
-		return service.updateMovie(id, movie);
+	public String updateMovie(@PathParam("id") Long id, String cd) {
+		return service.updateMovie(id, cd);
 	}
 
 	@Path("/json/{id}")
@@ -45,5 +45,11 @@ public class MovieEndpoint {
 		return service.deleteMovie(id);
 
 	}
+
+
+
+
+
+
 
 }

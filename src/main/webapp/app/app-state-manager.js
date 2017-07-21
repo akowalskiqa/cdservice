@@ -8,12 +8,12 @@
         $stateProvider.state("dashboard", {
             url: "/dashboard",
             templateUrl: "app/feature/dashboard/dashboard.html"
-        }).state("getmovie", {
-            url: "/getmovie",
-            templateUrl: "app/feature/movie/get-movie/get-movie.html"
-        }).state("addmovie", {
-            url: "/addmovie",
-            templateUrl: "app/feature/movie/add-movie/add-movie.html"
+        }).state("getcd", {
+            url: "/getcd",
+            templateUrl: "app/feature/cd/get-cd/get-cd.html"
+        }).state("addcd", {
+            url: "/addcd",
+            templateUrl: "app/feature/cd/add-cd/add-cd.html"
         })
     });
 }());

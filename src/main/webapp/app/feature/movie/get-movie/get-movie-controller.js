@@ -1,13 +1,13 @@
 (function() {
 
-    var GetMovieController =  function(movieDal)
+    var GetMovieController =  function(cdDal)
     {
         var vm = this;
         vm.test = "test";
 
         function init() {
-            movieDal.getMovies().then(function (results) {
-                vm.movies  = results;
+            cdDal.getMovies().then(function (results) {
+                vm.cds  = results;
             }, function (error) {
                 vm.error = true;
                 vm.errorMessage = error;
@@ -15,5 +15,5 @@
         }
         init();
     };
-    angular.module('cinema').controller('getMovieController', ['movieDal', GetMovieController]);
+    angular.module('cinema').controller('getMovieController', ['cdDal', GetMovieController]);
 }());

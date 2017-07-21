@@ -5,7 +5,7 @@ import javax.enterprise.inject.Alternative;
 
 @ApplicationScoped
 @Alternative
-public class MovieServiceMapImpl implements MovieService {
+public class CdServiceMapImpl implements CdService {
 
 	@Override
 	public String getAllMovies() {
@@ -14,13 +14,13 @@ public class MovieServiceMapImpl implements MovieService {
 	}
 
 	@Override
-	public String createMovie(String movie) {
+	public String createMovie(String cd) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String updateMovie(Long id, String movie) {
+	public String updateMovie(Long id, String cd) {
 		// TODO Auto-generated method stub
 		return null;
 	}
