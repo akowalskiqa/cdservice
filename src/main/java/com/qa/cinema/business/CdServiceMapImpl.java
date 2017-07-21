@@ -8,6 +8,17 @@ import javax.enterprise.inject.Alternative;
 public class CdServiceMapImpl implements CdService {
 
 	@Override
+	public String getCdById(Long id){
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public String deleteAllCds(){
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
 	public String getAllMovies() {
 		// TODO Auto-generated method stub
 		return null;

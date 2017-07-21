@@ -24,6 +24,13 @@ public class CdEndPoint {
 		return service.getAllMovies();
 	}
 
+	@Path("/json/{id}")
+	@GET
+	@Produces({ "application/json" })
+	public String getCdById(@PathParam("id") Long id) {
+		return  service.getCdById(id);
+	}
+
 	@Path("/json")
 	@POST
 	@Produces({ "application/json" })
@@ -38,18 +45,17 @@ public class CdEndPoint {
 		return service.updateMovie(id, cd);
 	}
 
+	@Path("/json/")
+	@DELETE
+	@Produces({ "application/json" })
+	public String deleteAllCds(){
+		return service.deleteAllCds();
+	}
+
 	@Path("/json/{id}")
 	@DELETE
 	@Produces({ "application/json" })
 	public String deleteMovie(@PathParam("id") Long id) {
 		return service.deleteMovie(id);
-
 	}
-
-
-
-
-
-
-
 }

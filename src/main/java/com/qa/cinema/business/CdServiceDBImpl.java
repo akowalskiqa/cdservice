@@ -22,46 +22,19 @@ public class CdServiceDBImpl implements CdService {
 	@Inject
 	private JSONUtil util;
 
+    @Override
+	public String deleteAllCds(){
+	    Query query = manager.createQuery("DELETE FROM Cd");
+	    query.executeUpdate();
+        return "{\"message\": \"cds sucessfully deleted\"}";
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @Override
+	public String getCdById(Long id){
+		Query query = manager.createQuery("Select cd FROM Cd cd WHERE  cd.id=:id").setParameter("id",id);
+		Collection<Cd> cds = (Collection<Cd>) query.getResultList();
+		return util.getJSONForObject(cds);
+	}
 
 	@Override
 	public String getAllMovies() {
@@ -79,10 +52,11 @@ public class CdServiceDBImpl implements CdService {
 
 	@Override
 	public String updateMovie(Long id, String cd) {
-		Cd updatedMovie = util.getObjectForJSON(cd, Cd.class);
+		Cd updatedCd = util.getObjectForJSON(cd, Cd.class);
 		Cd cdInDB = findMovie(id);
+		updatedCd.setId(cdInDB.getId());
 		if (cdInDB != null) {
-			cdInDB = updatedMovie;
+			cdInDB = updatedCd;
 			manager.merge(cdInDB);
 		}
 		return "{\"message\": \"cd sucessfully updated\"}";

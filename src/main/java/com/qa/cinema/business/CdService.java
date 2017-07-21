@@ -8,4 +8,8 @@ public interface CdService {
 	String updateMovie(Long id, String cd);
 
 	String deleteMovie(Long id);
+
+	String getCdById(Long id);
+
+	String deleteAllCds();
 }

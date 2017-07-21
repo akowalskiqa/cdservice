@@ -29,6 +29,10 @@ public class Cd {
 		return id;
 	}
 
+	public void setId(Long id){
+		this.id = id;
+	}
+
 	public String getArtistName() {
 		return artistName;
 	}
@@ -52,5 +56,7 @@ public class Cd {
 	public void setAlbumTitle(String albumTitle) {
 		this.albumTitle = albumTitle;
 	}
+
+
 
 }
